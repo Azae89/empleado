@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+{% block title%}
+AGREGAR  EMPLEADO
+{% endblock title%}
+
+{% block content %}
+	{% include "includes/header.html"%}
+<div class="grid-container">
+	<div class="grid-x">
+		<h1>AGREGAR EMPLEADO</h1>
+		<form class="cell grid-x grid-margin-x" method="post" enctype="multipart/form-data">{% csrf_token %}
+			<div class="cell large-6 ">
+				<label>Nombres:
+					{{form.first_name}}
+				</label>
+			</div>
+			<div class="cell large-6 ">
+				<label>Apellidos:
+					{{form.last_name}}
+				</label>
+			</div>
+			<div class="cell large-6 ">
+				<label>Trabajo:
+					{{form.job}}
+				</label>
+			</div>
+			<div class="cell large-6 ">
+				<label>Àrea:
+					{{form.departamento}}
+				</label>
+			</div>
+			<div class="cell large-12">
+				<label>Habilidades extra:
+					{{form.habilidades}}
+				</label>
+			</div>
+			<div class="cell large-6 ">
+				<label>Avatar:
+					{{form.avatar}}
+				</label>
+			</div>
+			<div class="cell ">
+				<button type="submit" class="success button" >Guardar</button>
+			</div>							
+			
+		</form>
+	</div>
+</div>
+{% endblock content %}
